@@ -1,0 +1,44 @@
+.nav,
+.nav button,
+.nav span[data-ui='TextInput'],
+.nav span[data-ui='TextInput'] span span,
+.nav div[data-ui='Flex'],
+.nav div[data-ui='Flex'] a,
+.nav div[data-ui='Navbar'],
+.nav div[data-ui='Card'] {
+  --card-bg-color: #efe7e6;
+  --card-border-color: #b38f89;
+  --card-hairline-soft-color: #68263a;
+  --card-hairline-hard-color: #68263a;
+  --card-fg-color: #68263a;
+}
+
+.nav span[data-ui='TextInput'] span span {
+  --card-bg-color: #efe7e6 !important;
+  --card-fg-color: #68263a !important;
+}
+
+.nav button[data-ui='MenuButton'] {
+  --card-border-color: transparent !important;
+  cursor: pointer;
+}
+
+.nav button[data-ui='MenuButton'] div[data-ui='Text'] {
+  --card-muted-fg-color: #68263a !important;
+}
+
+.nav button[data-ui='MenuButton']:hover {
+  --card-border-color: transparent !important;
+}
+
+.nav button:hover {
+  --card-bg-color: transparent !important;
+  --card-border-color: #c15777 !important;
+  --card-fg-color: #68263a !important;
+}
+
+.nav div[data-ui='Flex'] a:hover {
+  --card-bg-color: #993855 !important;
+  --card-border-color: #c15777 !important;
+  --card-fg-color: #ffffff !important;
+}
