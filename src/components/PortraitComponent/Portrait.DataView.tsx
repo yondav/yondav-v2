@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import tw, { css, styled } from 'twin.macro';
 
 import { Portrait, UiTheme } from '../../contexts';
@@ -70,6 +70,7 @@ const Line = ({ lineNumber, indentation, trailingComma, content }: Line) => {
     </StyledLine>
   );
 };
+
 export default function PortraitDataView() {
   const { color } = UiTheme.useThemeContext();
   const {
@@ -110,13 +111,14 @@ export default function PortraitDataView() {
       }}
     >
       {initialValue.map(line => (
-        <Line
-          key={line.lineNumber}
-          lineNumber={line.lineNumber}
-          indentation={line.indentation}
-          content={line.content}
-          trailingComma={line.trailingComma}
-        />
+        <div key={line.lineNumber}>
+          <Line
+            lineNumber={line.lineNumber}
+            indentation={line.indentation}
+            content={line.content}
+            trailingComma={line.trailingComma}
+          />
+        </div>
       ))}
     </pre>
   );

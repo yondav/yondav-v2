@@ -22,7 +22,7 @@ const transition: Transition = {
 
 // Define the styled components used in the component's UI.
 const StyledButton = styled(Button).attrs({ variant: 'neutral' })(
-  tw`relative w-10 h-10 sm:(w-14 h-14) flex flex-col items-center justify-center`
+  tw`relative w-14 h-14 flex flex-col items-center justify-center`
 );
 
 const StyledCopy = styled(motion.div).attrs({
@@ -54,7 +54,8 @@ export default function ActionButton({ copy, children, ...rest }: ButtonProps) {
   }, []);
 
   return (
-    <StyledButton
+    <button
+      css={tw`relative w-14 h-14 flex flex-col items-center justify-center text-neutral-900 shadow shadow-neutral-200 hover:(bg-neutral-100) transition-all ease-linear duration-100`}
       {...rest}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -69,6 +70,6 @@ export default function ActionButton({ copy, children, ...rest }: ButtonProps) {
           ))}
         </StyledCopy>
       )}
-    </StyledButton>
+    </button>
   );
 }

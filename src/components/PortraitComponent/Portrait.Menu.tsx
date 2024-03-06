@@ -175,7 +175,7 @@ export default function PortraitMenu() {
               <MdOutlineFormatPaint />
             </ActionButton>
             <ActionButton
-              css={{ ...tw`rounded-none` }}
+              css={{ ...tw`rounded-tr-full rounded-br-full` }}
               copy='random'
               onClick={() =>
                 handleDispatch([{ type: Portrait.ACTIONTYPE.RANDOM, payload: undefined }])
@@ -183,7 +183,7 @@ export default function PortraitMenu() {
             >
               <RiShuffleFill />
             </ActionButton>
-            <ActionButton
+            {/* <ActionButton
               css={{ ...tw`rounded-tr-full rounded-br-full` }}
               copy='data'
               onClick={() =>
@@ -194,7 +194,7 @@ export default function PortraitMenu() {
             >
               <VscJson />
             </ActionButton>
-            {/* <ActionButton
+            <ActionButton
               css={{ ...tw`rounded-tr-full rounded-br-full` }}
               copy='save'
               onClick={() =>
