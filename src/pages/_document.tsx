@@ -38,7 +38,7 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
     return {
       ...initialProps,
       head: [
-        <Fragment key='fonts'>
+        <>
           <link rel='stylesheet' href='https://use.typekit.net/elr5mzn.css' />
           <link rel='shortcut icon' href='/favicon.ico' />
           <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
@@ -49,7 +49,7 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
           <meta name='msapplication-TileColor' content='#B38F89' />
           <meta name='theme-color' content='#EFE7E6' />
           <title>Alison Lamb - Visual Designer</title>
-        </Fragment>,
+        </>,
       ],
       styles: (
         <>
