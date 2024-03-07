@@ -7,7 +7,7 @@ import tw, { styled } from 'twin.macro';
 import { UiTheme } from '../../contexts';
 import Logo from '../Logo';
 
-import Hamburger from './Nav.Hamburger';
+// import Hamburger from './Nav.Hamburger';
 
 const NavBase = styled(motion.header).attrs({
   initial: { opacity: 0 },

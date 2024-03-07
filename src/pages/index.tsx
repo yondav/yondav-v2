@@ -92,7 +92,12 @@ const IndexPage = () => {
               </a>
             </p>
             <div css={{ ...tw`flex gap-4 my-4` }}>
-              <Button variant='primary'>
+              <Button
+                as='a'
+                variant='primary'
+                href='/jonathan-david-resume-2024.pdf'
+                download='jonathan-david-resume-2024.pdf'
+              >
                 <RiFileList2Fill size='1.5rem' />
               </Button>
               <Button
