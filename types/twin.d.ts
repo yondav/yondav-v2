@@ -1,6 +1,6 @@
 import type { DOMAttributes } from 'react';
 import type { CSSProp, css as cssImport } from 'styled-components';
-import type styledImport from 'styled-components';
+import styledImport from 'styled-components';
 import 'twin.macro';
 
 declare module 'twin.macro' {
@@ -17,23 +17,16 @@ declare module 'react' {
   }
 }
 
-// Augment styled components to accept motion components with any HTML element type
-declare module 'styled-components' {
-  export interface StyledComponent<
-    // Define a generic for the HTML element type, allowing motion components with any HTML element type
-    E extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>,
-    // Pass through the theme type
-    T = {},
-    // Specify any additional props
-    O = {},
-    // Specify the component's class key
-    A extends string = never
-  > extends React.Component<O, any, any> {
-    // Override the `attrs` method to accept motion components with any HTML element type
-    attrs<Props extends {}>(
-      attrs: (Props & { as?: E }) | ((props: Props) => (Props & { as?: E }))
-    ): StyledComponent<E, T, O & Props, A>;
-  }
+// Create a custom function that wraps the styled function and handles motion components with any HTML element type
+function styledWithMotion<E extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>>(
+  element: E
+) {
+  return function (
+    ...args: Parameters<typeof styledImport> // Pass through the parameters of the original styled function
+  ) {
+    const styledComponent = styledImport(...args); // Call the original styled function
+    return styledComponent as any; // Cast the styled component to any to avoid type errors
+  };
 }
 
 // The 'as' prop on styled components
