@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps } from 'framer-motion';
 import { RiGithubFill, RiLinkedinBoxFill } from 'react-icons/ri';
 import tw, { styled } from 'twin.macro';
 
@@ -7,7 +7,8 @@ import Logo from '../Logo';
 const NavBase = motion(
   styled.header(
     tw`fixed w-screen h-20 py-2 px-4 left-0 top-0 z-50 bg-neutral-200 transition-all flex justify-between items-center`
-  )
+  ),
+  { forwardMotionProps: true }
 );
 
 export default function Nav() {

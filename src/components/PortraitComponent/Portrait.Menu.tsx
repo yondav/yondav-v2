@@ -16,28 +16,22 @@ import { useMediaQuery } from '../../hooks';
 
 import ActionButton from './Portrait.ActionButton';
 
-const PlaygroundMenuIndicatorContainer = styled(motion.div)(() => [
-  tw`w-fit p-4 absolute left-1/2 -translate-x-1/2 z-50 cursor-pointer transition-all`,
-
-  // active === 'active' ? tw`bottom-24` : tw`bottom-8`,
-]);
-
-const PlaygroundMenuIndicator = styled(motion.div).attrs({
-  variants: {
-    inactive: { width: theme`width.40` },
-    active: { width: theme`width.80` },
-    transition: { duration: 0.1, type: 'spring' },
-  },
-})(
-  tw`h-0.5 bg-neutral-500 rounded-full shadow-2xl shadow-bg transition-all hover:(brightness-150 scale-x-105 shadow-2xl shadow-neutral-50)`
+const PlaygroundMenuIndicatorContainer = motion(
+  styled.div(() => [
+    tw`w-fit p-4 absolute left-1/2 -translate-x-1/2 z-50 cursor-pointer transition-all`,
+  ])
 );
 
-const PlaygroundMenu = styled(motion.div).attrs({
-  initial: { bottom: '-5rem' },
-  animate: { bottom: '2rem' },
-  exit: { bottom: '-5rem' },
-})(
-  tw`bg-gradient-to-b from-neutral-100 to-neutral-50 rounded-full flex absolute left-1/2 -translate-x-1/2 bottom-16 z-50`
+const PlaygroundMenuIndicator = motion(
+  styled.div(
+    tw`h-0.5 bg-neutral-500 rounded-full shadow-2xl shadow-bg transition-all hover:(brightness-150 scale-x-105 shadow-2xl shadow-neutral-50)`
+  )
+);
+
+const PlaygroundMenu = motion(
+  styled.div(
+    tw`bg-gradient-to-b from-neutral-100 to-neutral-50 rounded-full flex absolute left-1/2 -translate-x-1/2 bottom-16 z-50`
+  )
 );
 
 export default function PortraitMenu() {
@@ -94,7 +88,6 @@ export default function PortraitMenu() {
   return (
     <>
       <PlaygroundMenuIndicatorContainer
-        // active={active}
         onClick={toggleActiveState}
         variants={{
           active: {
@@ -121,11 +114,23 @@ export default function PortraitMenu() {
         initial={active}
         animate={active}
       >
-        <PlaygroundMenuIndicator initial={active} animate={active} />
+        <PlaygroundMenuIndicator
+          variants={{
+            inactive: { width: theme`width.40` },
+            active: { width: theme`width.80` },
+            transition: { duration: 0.1, type: 'spring' },
+          }}
+          initial={active}
+          animate={active}
+        />
       </PlaygroundMenuIndicatorContainer>
       <AnimatePresence>
         {active === 'active' && (
-          <PlaygroundMenu>
+          <PlaygroundMenu
+            initial={{ bottom: '-5rem' }}
+            animate={{ bottom: '2rem' }}
+            exit={{ bottom: '-5rem' }}
+          >
             <ActionButton
               css={{ ...tw`rounded-bl-full rounded-tl-full` }}
               copy='default'

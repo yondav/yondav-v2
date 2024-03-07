@@ -25,13 +25,9 @@ const StyledButton = styled(Button).attrs({ variant: 'neutral' })(
   tw`relative w-14 h-14 flex flex-col items-center justify-center`
 );
 
-const StyledCopy = styled(motion.div).attrs({
-  variants,
-  transition,
-  initial: 'initial',
-  animate: 'animate',
-  exit: 'exit',
-})(tw`text-helper w-full flex justify-center items-center`);
+const StyledCopy = motion(
+  styled.div(tw`text-helper w-full flex justify-center items-center`)
+);
 
 /**
  * ActionButton component for creating interactive buttons with optional text animation.
@@ -62,7 +58,13 @@ export default function ActionButton({ copy, children, ...rest }: ButtonProps) {
     >
       {children}
       {copy && isHovered && (
-        <StyledCopy>
+        <StyledCopy
+          variants={variants}
+          transition={transition}
+          initial='initial'
+          animate='animate'
+          exit='exit'
+        >
           {copy.split('').map((char, i) => (
             <motion.span key={i} variants={variants} transition={{ ease: 'easeInOut' }}>
               {char}
