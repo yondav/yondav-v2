@@ -1,5 +1,5 @@
 import { motion, type Variants } from 'framer-motion';
-import { styled, theme } from 'twin.macro';
+import { theme } from 'twin.macro';
 
 const reelAnimation: Variants = {
   hidden: {},
@@ -133,11 +133,6 @@ const lights = {
     '#402009',
   ],
 };
-const AnimatedReelGroup = styled(motion.g).attrs({
-  variants: reelAnimation,
-  initial: 'hidden',
-  animate: 'visible',
-})({});
 
 export default function Tape() {
   return (
@@ -518,7 +513,12 @@ export default function Tape() {
             y2='773.4'
           />
         </g>
-        <AnimatedReelGroup id='reel-right'>
+        <motion.g
+          variants={reelAnimation}
+          initial='hidden'
+          animate='visible'
+          id='reel-right'
+        >
           <circle fill='#DEE4E4' stroke='#343434' cx='322' cy='316' r='193.4' />
           <path
             fill='#343434'
@@ -538,8 +538,13 @@ export default function Tape() {
           />
           <circle fill='#242424' cx='330.4' cy='305.9' r='38.2' />
           <circle fill='#AEB0A2' cx='330.7' cy='304.6' r='5.9' />
-        </AnimatedReelGroup>
-        <AnimatedReelGroup id='reel-left'>
+        </motion.g>
+        <motion.g
+          variants={reelAnimation}
+          initial='hidden'
+          animate='visible'
+          id='reel-left'
+        >
           <ellipse
             fill='#D1D4CD'
             stroke='#343434'
@@ -566,7 +571,7 @@ export default function Tape() {
           />
           <ellipse fill='#242424' cx='727' cy='321.1' rx='33.4' ry='34.7' />
           <ellipse fill='#AEB0A2' cx='729.6' cy='320.7' rx='4.4' ry='4.7' />
-        </AnimatedReelGroup>
+        </motion.g>
       </g>
     </g>
   );
