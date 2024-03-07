@@ -33,12 +33,6 @@ const secondaryTextAnimation: Variants = {
   visible: { opacity: 1, transition: { duration: 0.3, delay: 3, ease: 'easeInOut' } },
 };
 
-const BuildingGroup = styled.g.attrs({
-  variants: buildingAnimation,
-  initial: 'hidden',
-  animate: 'visible',
-})({});
-
 export default function BS() {
   return (
     <g id='big-snow'>
