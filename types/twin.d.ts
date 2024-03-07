@@ -1,3 +1,4 @@
+import type { DOMAttributes } from 'react';
 import type { CSSProp, css as cssImport } from 'styled-components';
 import type styledImport from 'styled-components';
 import 'twin.macro';
@@ -14,10 +15,24 @@ declare module 'react' {
     css?: CSSProp;
     tw?: string;
   }
-  // The inline svg css prop
-  interface SVGProps<T> extends SVGProps<SVGSVGElement> {
-    css?: CSSProp;
-    tw?: string;
+}
+
+// Augment styled components to accept motion components with any HTML element type
+declare module 'styled-components' {
+  export interface StyledComponent<
+    // Define a generic for the HTML element type, allowing motion components with any HTML element type
+    E extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>,
+    // Pass through the theme type
+    T = {},
+    // Specify any additional props
+    O = {},
+    // Specify the component's class key
+    A extends string = never
+  > extends React.Component<O, any, any> {
+    // Override the `attrs` method to accept motion components with any HTML element type
+    attrs<Props extends {}>(
+      attrs: (Props & { as?: E }) | ((props: Props) => (Props & { as?: E }))
+    ): StyledComponent<E, T, O & Props, A>;
   }
 }
 
