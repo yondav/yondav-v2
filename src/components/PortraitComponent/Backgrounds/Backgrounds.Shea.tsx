@@ -40,29 +40,88 @@ const muralLetterAnimation: Variants = {
   visible: { opacity: 1, translateY: [-100, 5, 0] },
 };
 
-const AnimatedMuralPath = styled(motion.path).attrs({
-  variants: muralLetterAnimation,
-  fill: '#DCD9D2',
-  stroke: '#000000',
-  strokeWidth: '2',
-})({});
-
 export default function Shea() {
   return (
     <g id='shea'>
       <rect fill='#00B6CE' width='1000' height='1000' />
       <motion.g variants={muralAnimation} initial='hidden' animate='visible'>
-        <AnimatedMuralPath d='M166.9,396.6 L100,396.6 L100,452.6 L149.3,452.6 L149.3,471.5 L102,471.5 L102,493.1 L167.5,493.1 L167.5,437.1 L126.3,437.1 L126.3,417.5 L166.9,417.5 Z' />
-        <AnimatedMuralPath d='M177.8,397.9l23.6,0v38.5h16.2v-39.2h21.6 v95.9h-22.3v-35.8h-15.5v35.1h-23C178.3,492.5,177.7,401.3,177.8,397.9z' />
-        <AnimatedMuralPath d='M249.9,397.2h57.4v17.6h-39.2v23h38.5v17.6 h-38.5v16.9h40.5v20.3h-58.8V397.2z' />
-        <AnimatedMuralPath d='M318.1,394.5c0,0-0.4,95.4,0,95.9h18v-34.2 h26.1v36.5h23.4v-98.2H318.1z M365,437.8h-28.4v-23.9c0.8,0,28.4,1.4,28.4,1.4V437.8z' />
-        <AnimatedMuralPath d='M443.1,473l0,22.1h63.5v-58.7h-39.8v-20.3 h40.5v-20.3h-63.5v58.8h39.8v16.9C483.6,471.5,444.5,473.1,443.1,473z' />
-        <AnimatedMuralPath d='M519.4,395.2v21.6h16.2v78.4h18.9v-78.4h23 v-22.9C577.5,393.9,521.7,395.2,519.4,395.2z' />
-        <AnimatedMuralPath d='M585,393.9v100.6h15.5v-36.6h26v38.7h18.3 l2.8-101.9L585,393.9z M628.6,441h-26.7v-26c-0.1,0-0.1,0,0,0l0,0c1.8,0.3,26.7,2.1,26.7,2.1L628.6,441z' />
-        <AnimatedMuralPath d='M698.7,395.2c0,0-39.4,0.7-39.9,0.7l-3.7,99.9 h38.4l25.1-21.6v-55.4L698.7,395.2z M701.6,468.1l-15.5,10.8h-11.8v-64.1l19.2,0.7l8.1,8.1L701.6,468.1z' />
-        <AnimatedMuralPath d='M748.3,401.3 V495.8 H724 V398.6 Z' />
-        <AnimatedMuralPath d='M779.4,399.3 L775.4,480.3 L795.6,480.3 L800.6,400.6 L819.9,400.6 L815.9,497.2 L754.4,497.2 L759.8,397.9 Z' />
-        <AnimatedMuralPath d='M820.7,496.5 H835.1 V436.9 L848.8,421.8 L855.7,433.5 L852.2,497.9 L865.2,497.9 L869.4,436.9 L878.9,421.2 L884.4,432.8 L881,496.5 L896.8,496.5 L900,401.3 H828.9 Z' />
+        <motion.path
+          variants={muralLetterAnimation}
+          fill='#DCD9D2'
+          stroke='#000000'
+          strokeWidth='2'
+          d='M166.9,396.6 L100,396.6 L100,452.6 L149.3,452.6 L149.3,471.5 L102,471.5 L102,493.1 L167.5,493.1 L167.5,437.1 L126.3,437.1 L126.3,417.5 L166.9,417.5 Z'
+        />
+        <motion.path
+          variants={muralLetterAnimation}
+          fill='#DCD9D2'
+          stroke='#000000'
+          strokeWidth='2'
+          d='M177.8,397.9l23.6,0v38.5h16.2v-39.2h21.6 v95.9h-22.3v-35.8h-15.5v35.1h-23C178.3,492.5,177.7,401.3,177.8,397.9z'
+        />
+        <motion.path
+          variants={muralLetterAnimation}
+          fill='#DCD9D2'
+          stroke='#000000'
+          strokeWidth='2'
+          d='M249.9,397.2h57.4v17.6h-39.2v23h38.5v17.6 h-38.5v16.9h40.5v20.3h-58.8V397.2z'
+        />
+        <motion.path
+          variants={muralLetterAnimation}
+          fill='#DCD9D2'
+          stroke='#000000'
+          strokeWidth='2'
+          d='M318.1,394.5c0,0-0.4,95.4,0,95.9h18v-34.2 h26.1v36.5h23.4v-98.2H318.1z M365,437.8h-28.4v-23.9c0.8,0,28.4,1.4,28.4,1.4V437.8z'
+        />
+        <motion.path
+          variants={muralLetterAnimation}
+          fill='#DCD9D2'
+          stroke='#000000'
+          strokeWidth='2'
+          d='M443.1,473l0,22.1h63.5v-58.7h-39.8v-20.3 h40.5v-20.3h-63.5v58.8h39.8v16.9C483.6,471.5,444.5,473.1,443.1,473z'
+        />
+        <motion.path
+          variants={muralLetterAnimation}
+          fill='#DCD9D2'
+          stroke='#000000'
+          strokeWidth='2'
+          d='M519.4,395.2v21.6h16.2v78.4h18.9v-78.4h23 v-22.9C577.5,393.9,521.7,395.2,519.4,395.2z'
+        />
+        <motion.path
+          variants={muralLetterAnimation}
+          fill='#DCD9D2'
+          stroke='#000000'
+          strokeWidth='2'
+          d='M585,393.9v100.6h15.5v-36.6h26v38.7h18.3 l2.8-101.9L585,393.9z M628.6,441h-26.7v-26c-0.1,0-0.1,0,0,0l0,0c1.8,0.3,26.7,2.1,26.7,2.1L628.6,441z'
+        />
+        <motion.path
+          variants={muralLetterAnimation}
+          fill='#DCD9D2'
+          stroke='#000000'
+          strokeWidth='2'
+          d='M698.7,395.2c0,0-39.4,0.7-39.9,0.7l-3.7,99.9 h38.4l25.1-21.6v-55.4L698.7,395.2z M701.6,468.1l-15.5,10.8h-11.8v-64.1l19.2,0.7l8.1,8.1L701.6,468.1z'
+        />
+        <motion.path
+          variants={muralLetterAnimation}
+          fill='#DCD9D2'
+          stroke='#000000'
+          strokeWidth='2'
+          d='M748.3,401.3 V495.8 H724 V398.6 Z'
+        />
+        <motion.path
+          variants={muralLetterAnimation}
+          fill='#DCD9D2'
+          stroke='#000000'
+          strokeWidth='2'
+          d='M779.4,399.3 L775.4,480.3 L795.6,480.3 L800.6,400.6 L819.9,400.6 L815.9,497.2 L754.4,497.2 L759.8,397.9 Z'
+        />
+        <motion.path
+          variants={muralLetterAnimation}
+          fill='#DCD9D2'
+          stroke='#000000'
+          strokeWidth='2'
+          d='M820.7,496.5 H835.1 V436.9 L848.8,421.8 L855.7,433.5 L852.2,497.9 L865.2,497.9 L869.4,436.9 L878.9,421.2 L884.4,432.8 L881,496.5 L896.8,496.5 L900,401.3 H828.9 Z'
+        />
       </motion.g>
       <motion.g variants={marlinAnimation} initial='hidden' animate='visible'>
         <path
