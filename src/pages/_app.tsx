@@ -1,7 +1,6 @@
 import type { AppProps } from 'next/app';
 import { Baumans, Sarpanch } from 'next/font/google';
 
-import Nav from '../components/Nav';
 import { UiTheme } from '../contexts';
 import GlobalStyles from '../styles/GlobalStyles';
 
@@ -28,7 +27,6 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       </style>
       <UiTheme.Provider>
         <GlobalStyles />
-        <Nav />
         <Component {...pageProps} />
       </UiTheme.Provider>
     </>

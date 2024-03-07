@@ -4,20 +4,20 @@ import tw, { styled } from 'twin.macro';
 
 import Logo from '../Logo';
 
-const NavBase = styled(motion.header)(
+const NavBase = styled(motion.header).attrs({
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: { duration: 1, delay: 0.2 },
+  },
+})(
   tw`fixed w-screen h-20 py-2 px-4 left-0 top-0 z-50 bg-neutral-200 transition-all flex justify-between items-center`
 );
 
 export default function Nav() {
   return (
     <>
-      <NavBase
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: 1,
-          transition: { duration: 1, delay: 0.2 },
-        }}
-      >
+      <NavBase>
         <div
           css={{ ...tw`w-12 cursor-pointer` }}
           onClick={() => {
