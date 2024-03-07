@@ -49,7 +49,7 @@ export default function PortraitComponent() {
   const Background = useMemo(() => backgrounds[color], [color]);
 
   return (
-    <div css={{ ...tw`h-[calc(100vh - 5rem)]` }}>
+    <div>
       <PlaygroundContainer state={state}>
         {state !== Portrait.STATE.DEFAULT && (
           <>

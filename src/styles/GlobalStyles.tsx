@@ -682,7 +682,13 @@ const CustomStyles = createGlobalStyle({
   html: {
     minWidth: '350px',
     scrollPaddingTop: theme`space.16`,
-    backgroundColor: theme`colors.neutral.100`,
+    backgroundColor: theme`colors.neutral.200`,
+    minHeight: '100vh',
+    height: 'fit-content',
+  },
+
+  body: {
+    ...tw`font-copy text-fg bg-gradient-to-b from-neutral-100 via-neutral-200 to-neutral-400`,
   },
 });
 

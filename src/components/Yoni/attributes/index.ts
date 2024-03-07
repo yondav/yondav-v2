@@ -1,9 +1,0 @@
-export { default as Eyes } from './attribute.eyes';
-export { default as Eyebrows } from './attribute.eyebrows';
-export { default as FacialHair } from './attribute.facialHair';
-export { default as Glasses } from './attribute.glasses';
-export { default as Hair } from './attribute.hair';
-export { default as Hat } from './attribute.hat';
-export { default as Mouth } from './attribute.mouth';
-export { default as Shirt } from './attribute.shirt';
-export { default as Skin } from './attribute.skin';

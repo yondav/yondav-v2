@@ -2,6 +2,9 @@
 module.exports = {
   theme: {
     extend: {
+      fontFamily: {
+        header: 'var(--header-font)',
+      },
       screens: {
         sm: '480px',
         md: '700px',

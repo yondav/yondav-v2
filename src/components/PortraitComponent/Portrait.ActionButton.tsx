@@ -55,7 +55,7 @@ export default function ActionButton({ copy, children, ...rest }: ButtonProps) {
 
   return (
     <button
-      css={tw`relative w-14 h-14 flex flex-col items-center justify-center text-neutral-900 shadow shadow-neutral-200 hover:(bg-neutral-100) transition-all ease-linear duration-100`}
+      css={tw`relative w-14 h-14 flex flex-col items-center justify-center text-neutral-900 shadow shadow-neutral-200 hover:(bg-neutral-200) transition-all ease-linear duration-100 outline-0`}
       {...rest}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

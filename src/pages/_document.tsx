@@ -9,7 +9,6 @@ import Document, {
   NextScript,
   type DocumentContext,
 } from 'next/document';
-import { Fragment } from 'react';
 import { ServerStyleSheet } from 'styled-components';
 
 function MyDocument() {
@@ -48,7 +47,7 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
           <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#B38F89' />
           <meta name='msapplication-TileColor' content='#B38F89' />
           <meta name='theme-color' content='#EFE7E6' />
-          <title>Alison Lamb - Visual Designer</title>
+          <title>Yoni David - Software Engineer</title>
         </>,
       ],
       styles: (

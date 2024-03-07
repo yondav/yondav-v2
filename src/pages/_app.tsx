@@ -1,11 +1,16 @@
 import type { AppProps } from 'next/app';
-import { Abril_Fatface } from 'next/font/google';
+import { Abril_Fatface, Baumans, Sarpanch } from 'next/font/google';
 
 import Nav from '../components/Nav';
 import { UiTheme } from '../contexts';
 import GlobalStyles from '../styles/GlobalStyles';
 
-const abril = Abril_Fatface({
+const sarpanch = Sarpanch({
+  subsets: ['latin'],
+  weight: ['600', '700', '800'],
+});
+
+const baumans = Baumans({
   subsets: ['latin'],
   weight: '400',
 });
@@ -16,8 +21,8 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       <style jsx global>
         {`
           :root {
-            --header-font: ${abril.style.fontFamily};
-            --copy-font: aktiv-grotesk;
+            --header-font: ${sarpanch.style.fontFamily};
+            --copy-font: ${baumans.style.fontFamily};
           }
         `}
       </style>
