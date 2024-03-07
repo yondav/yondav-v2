@@ -33,7 +33,7 @@ const secondaryTextAnimation: Variants = {
   visible: { opacity: 1, transition: { duration: 0.3, delay: 3, ease: 'easeInOut' } },
 };
 
-const BuildingGroup = styled(motion.g).attrs({
+const BuildingGroup = styled.g.attrs({
   variants: buildingAnimation,
   initial: 'hidden',
   animate: 'visible',
@@ -58,7 +58,7 @@ export default function BS() {
           d='M766,464.2c-9.3-0.5-105.7-2.5-114.9-2.7l-116.2-2.7l-58.1-1.4 l-14.5-0.4c-3.6-0.1-8,0.5-11.5-0.7c-0.5-0.2-1-0.4-1.5-0.7c-1.4-0.8-2.8-1.7-4.2-2.6l-4.4,183.6l330,0.1L766,464.2z'
         />
       </g>
-      <BuildingGroup id='gate'>
+      <motion.g id='gate' variants={buildingAnimation} initial='hidden' animate='visible'>
         <path
           fill='#97998D'
           stroke='#343434'
@@ -74,8 +74,13 @@ export default function BS() {
           opacity='0.2'
           d='M602.3,461.6 L674.8,461.6 743.2,463.5 M602.3,468.6 L671.9,468.1 743.7,469.6 M744.6,475.2 L670.2,473.7 601.8,474.3 M601.3,479.9 L675.3,479.4 744.1,480.8 M601.3,485.9 L674.8,485.5 744.6,486.9 M601.3,491.6 L675.3,491.1 744.1,492.5 M601.8,496.7 L673.2,496.1 743.9,497.4 M601.1,501.4 L673.2,501.2 743.7,503 M601.8,508.1 L674,507.3 744.1,508.4 M601.8,514.2 L673.2,513.3 743.7,514.2 M601.8,519.4 L673.2,518.7 744.6,519.8 M601.8,525.2 L673.2,524.4 744.6,525.5 M602.1,530.4 L675.3,530 743.9,531.5 M601.8,536.4 L674.6,535.6 744.6,536.7 M602.1,541.6 L676.2,540.9 744.1,542.1 M602.5,548.1 L675.3,547.6 743.7,548.8'
         />
-      </BuildingGroup>
-      <BuildingGroup id='awning'>
+      </motion.g>
+      <motion.g
+        id='awning'
+        variants={buildingAnimation}
+        initial='hidden'
+        animate='visible'
+      >
         <path
           fill='#450707'
           stroke='#343434'
@@ -98,7 +103,7 @@ export default function BS() {
           opacity='0.2'
           d='M448.8,450.3c0,0,25.7-6.2,45.7-5.8 M443.7,446c0,0,18.4-7.3,38.2-6.4'
         />
-      </BuildingGroup>
+      </motion.g>
       <motion.g
         id='awning-text-primary'
         variants={textAnimation}
@@ -331,7 +336,12 @@ export default function BS() {
           d='M483.2,410.3c-0.4,0-0.7,0-1.1,0l-0.1,5c0,0.2,0,0.6,0.1,0.6c0.1,0.1,0.6,0,0.7,0l2.8-0.1 c0-0.4,0-0.7,0-1.1h-2.4V410.3z'
         />
       </motion.g>
-      <BuildingGroup id='supports-doors'>
+      <motion.g
+        id='supports-doors'
+        variants={buildingAnimation}
+        initial='hidden'
+        animate='visible'
+      >
         <path
           fill='#97998D'
           stroke='#343434'
@@ -348,7 +358,7 @@ export default function BS() {
           fill='#FFFFFF'
           d='M497.8,491.1h17c2.7,0,4.8,2.2,4.8,4.9v82.1 M507.1,513.3c0,0,9.8,37,9.7,40.9 M507.1,504.6c0,0,8.5,26.2,8.8,31'
         />
-      </BuildingGroup>
+      </motion.g>
     </g>
   );
 }
