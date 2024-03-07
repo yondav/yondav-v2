@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import { Abril_Fatface, Baumans, Sarpanch } from 'next/font/google';
+import { Baumans, Sarpanch } from 'next/font/google';
 
 import Nav from '../components/Nav';
 import { UiTheme } from '../contexts';
